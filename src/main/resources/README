@@ -1,0 +1,56 @@
+Swagger URL :  http://localhost:3456/swagger-ui.html
+
+-------------------------------------------------------------------------------------------------------------------------------
+Sample Requests/Responses
+-------------------------------------------------------------------------------------------------------------------------------
+End Point :[POST] http://localhost:3456/empinfo/api/v1/save
+			
+REQUEST:
+{
+  "doj": "04-04-2023",
+  "email": "rk@gmail.com",
+  "employeeId": "555555",
+  "firstName": "rr",
+  "lastName": "kk",
+  "phoneNumbers": [
+    "4555555555","4445552233"
+  ],
+  "salary": 300000
+}
+				
+RESPONSE		
+{
+    "header": {
+        "status": "SUCCESS",
+        "code": 200,
+        "desc": "Employee Information Saved Successfully"
+    },
+    "responsePayload": {
+        "employee": {
+            "employeeid": 555555,
+            "firstname": "rr",
+            "lastname": "kk",
+            "email": "rk@gmail.com",
+            "phonenumber": "4555555555,4445552233",
+            "doj": "2023-04-04",
+            "salary": 300000.0
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+
+End Point :[GET] http://localhost:3456/empinfo/api/v1/getEmpTaxDetails/555555
+
+REQUEST : NONE
+
+RESPONSE 
+{
+    "firstName": "rr",
+    "lastName": "kk",
+    "salary": "300000.00",
+    "emplId": 555555,
+    "doj": "04-04-2023",
+    "tax": "582500.00",
+    "cess": "22000.00",
+    "annualSalary": "3600000.00"
+}
